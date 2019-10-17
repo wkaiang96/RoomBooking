@@ -16,65 +16,52 @@
 
 </style>
 </head>
-<!--Admin header will be differet with user header this i sbecause admin header is use to manage all the details and event details---->
+
 <body>
 <?php
-//start the session
+//session start
 	session_start();
-	//call out the database and server for east to connect
-	$servername="localhost";		
-	$username="root";
-	$password="";
-	$dbname="gcreation";
-	
-	//create connection
-	$conn= new mysqli($servername,$username,$password,$dbname);
-	
-	//check connection
-	if($conn->connect_error)
+	//if session email is not empty
+	if (!empty($_SESSION['email']))
 	{
-		die("Connection failed:".$conn->connect_error);
+		$phpEmail=$_SESSION['email'];
+		$pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/headerApi.php?email=".$phpEmail);
+		$result=json_decode($pageContents,true);	
+		$phpName=$result['userDetails'][0]['name'];
 	}
-	if (!empty($_SESSION['email']))//check the session (is empty or not)
-	{
-	$phpEmail=$_SESSION['email'];//to get the email in the session that store in login.php and save it in the $phpEmail variable
-	
-	$sql="SELECT * FROM userdata WHERE email='$phpEmail'";//select all details fromuserdata where email equal to $phpEmail
-	
-	$result=$conn->query($sql);
-	
-	$row=mysqli_fetch_assoc($result);
-}
-else// if the session is empty then put a become value
-{	
-	$phpEmail="a";
-}
-?>
+	//if session email is empty
+	else
+	{	//variable equal to a
+		$phpEmail="a";
+	}
+	?>
 
 
-<div class="col-lg-12"> <!--using bootstrap to set and design the header---->
+<div class="col-lg-12">
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid col-lg-12">
     <div class="navbar-header">
-    	<a href="#" class="navbar-brand"><img src="img/logo.png" width="115px" /></a>
-    	<a class="navbar-brand" href="#" id="HS">G Creation</a>
+    	<a href="home.php" class="navbar-brand"><img src="../img/logo.png" width="115px" /></a>
+    	<a class="navbar-brand" href="home.php" id="HS">G Creation</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-     	<li><a href="adminpage.php" id="HS">Mission</a></li>
-     	<li><a href="EventApply.php" id="HS">Event Apply</a></li>
-      	<li><a href="eventList.php" id="HS">Event List</a></li>
-      	<li><a href="userComment.php" id="HS">User Comment</a></li>
+     	<li><a href="home.php" id="HS">Home</a></li>
+     	<li><a href="aboutUs.php" id="HS">About Us</a></li>
+      	<li><a href="Event1.php" id="HS">Book</a></li>
+     	<li><a href="ContactUs.php" id="HS">Contact Us</a></li>
       </ul>
       <?php
-      		if ($phpEmail!="a"){// if the admin already sign in (display logout and edit button)
+		//if variable equal to a then diaplay the header that user havent login
+      		if ($phpEmail!="a"){
 		      echo '<ul class="nav navbar-nav navbar-right">
 		        <li>
 					<div class="dropdown">
-						<button onclick="myFunction()" class="dropbtn" >'. $row['name'].'</button>
+						<button onclick="myFunction()" class="dropbtn">'. $phpName.'</button>
 						  <div id="myDropdown" class="dropdown-content">
-						    <a href="editProfile.php">My Profile</a>
-						    <a href="logout.php">LogOut</a>
+						    <a href="../editProfile.php">My Profile</a>
+						    <a href="XXXXXXXX.php">Reservation</a>
+						    <a href="../logout.php">LogOut</a>
 						  </div>
 					</div>
 					<script>
@@ -102,7 +89,8 @@ else// if the session is empty then put a become value
 		        </li>
 		      </ul>';
 		      }
-			else{//if the email is empty(the user not yet sign in) display this header (call them sign in)
+			  //else show the header that user already login
+			else{
 		      echo '<ul class="nav navbar-nav navbar-right">
 		        <li>
 				        <a href="#popup1" id="HS"><span class="glyphicon glyphicon-log-in"></span> Login</a>
