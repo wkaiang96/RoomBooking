@@ -59,14 +59,14 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid col-lg-12">
     <div class="navbar-header">
-    	<a href="home.php" class="navbar-brand"><img src="img/logo.png" width="115px" /></a>
+    	<a href="home.php" class="navbar-brand"><img src="../img/logo.png" width="115px" /></a>
     	<a class="navbar-brand" href="home.php" id="HS">G Creation</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
      	<li><a href="home.php" id="HS">Home</a></li>
      	<li><a href="aboutUs.php" id="HS">About Us</a></li>
-      	<li><a href="Event1.php" id="HS">Room</a></li>
+      	<li><a href="Event1.php" id="HS">Book</a></li>
      	<li><a href="ContactUs.php" id="HS">Contact Us</a></li>
       </ul>
       <?php

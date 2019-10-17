@@ -30,19 +30,19 @@
 <body style="margin-top:3.5%;background-color:black" >
 	<?php
 	//import header
-		require('header.php');
+		require('../header.php');
 	?>
 	<br/>
 <div class="w3-content w3-display-container" >
 	<div class="row" >
 		<div class="col-sm-12" align="center" >
 		<div style="background-color:black;width:100%">
-			<a href="#"><img class="mySlides" src="img/event1.png" style="width:55%"/></a>
-			<a href="#"><img class="mySlides" src="img/event2.png" style="width:55%"/></a>
-			<a href="#"><img class="mySlides" src="img/event3.png" style="width:55%"/></a>
+			<a href="#"><img class="mySlides" src="../img/event1.png" style="width:55%"/></a>
+			<a href="#"><img class="mySlides" src="../img/event2.png" style="width:55%"/></a>
+			<a href="#"><img class="mySlides" src="../img/event3.png" style="width:55%"/></a>
 
-			<input type="image" src="img/back.png" onclick="plusDivs(-1)"  alt="Submit" width="30" />
-			<input type="image" src="img/next.png" onclick="plusDivs(1)" alt="Submit" width="30"/>
+			<input type="image" src="../img/back.png" onclick="plusDivs(-1)"  alt="Submit" width="30" />
+			<input type="image" src="../img/next.png" onclick="plusDivs(1)" alt="Submit" width="30"/>
 					</div>
 			</div>  
 	</div>
