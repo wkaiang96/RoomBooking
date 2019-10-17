@@ -2,12 +2,14 @@
 <head>
 <title></title>
 <link rel="stylesheet" type="text/css" href="footer.css"/>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
-<link type="text/css" rel="stylesheet" href="login.css"/>
 <?php
-	include('../header.php');
+	include('header.php');
 ?>
 <div class="container " style="margin-top:8%;margin-bottom:5%;text-align:center">
 <table style="width:60%;margin: 0 20% 0 20%">
@@ -18,7 +20,7 @@
 <p><b>Room C & D for huge group of people(12-15 people).</b></p>
 </td>
 <td> 
-<form id="booking-form" action="bookingR.php" method="post" role="form"> 
+<form id="reserve-form" action="../reserveR.php" method="post" role="form"> 
 <div  style="margin-left:3%;font-weight:bold">
 Slot 1: <br/>
 10.00am - 12.00pm<br/><br/>
@@ -49,7 +51,7 @@ Slot 4:<br/>
 </select>
 </p>
 <div class="form-group">
-	<input type="submit" name="reserve-submit" id="reserve-submit" tabindex="4" class="form-control btn btn-reserve" value="reserve">
+	<input type="submit" name="reserve-submit" id="reserve-submit" tabindex="4" class="btn btn-outline-secondary" value="reserve">
 </div>
 </div>
 </form>
