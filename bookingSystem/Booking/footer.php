@@ -29,22 +29,22 @@
 							<tr>
 								<td style="width: 25%">
 									<span>
-									<img src="img/facebook-logo-grey.png" width="42%" alt="facebook" class="auto-style2"/></span><span class="auto-style2">
+									<img src="../img/facebook-logo-grey.png" width="42%" alt="facebook" class="auto-style2"/></span><span class="auto-style2">
 									</span>
 								</td>
 								<td style="width: 25%">
 									<span>
-									<img src="img/instagram-512.png"  width="42%" alt="instagram" class="auto-style2"/></span><span class="auto-style2">
+									<img src="../img/instagram-512.png"  width="42%" alt="instagram" class="auto-style2"/></span><span class="auto-style2">
 									</span>
 								</td>
 								<td style="width: 25%">
 									<span>
-									<img src="img/email-icon.png" width="60%" alt="e-mail" class="auto-style2"/></span><span class="auto-style2">
+									<img src="../img/email-icon.png" width="60%" alt="e-mail" class="auto-style2"/></span><span class="auto-style2">
 									</span>
 								</td>
 								<td style="width: 25%">
 									<span>
-									<img src="img/more-icon.png" width="42%" alt="more" class="auto-style2"/></span><span class="auto-style2">
+									<img src="../img/more-icon.png" width="42%" alt="more" class="auto-style2"/></span><span class="auto-style2">
 									</span>
 								</td>
 							</tr>
@@ -68,7 +68,7 @@
 				<tr>
 					<td align="left" style="height: 28px">Hotline : 04-238 8858</td>
 					<td style="height: 30px"><a href="aboutUs.php">About Us</a></td>
-					<td rowspan="3"><img src="img/logo.png" width="30%" alt="Company_Logo"/></td>
+					<td rowspan="3"><img src="../img/logo.png" width="30%" alt="Company_Logo"/></td>
 
 				</tr>
 				<tr>
