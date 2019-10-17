@@ -11,7 +11,7 @@
 
 <body>
 	<?php //import header
-		require('../AdminHeader.php');
+		require('AdminHeader.php');
 	?>
 
 <div class="about-section"><!--using bootstrap to design layout---->
