@@ -15,30 +15,26 @@
 	?>
 <?php
 //session start
-	$session_start;
 	//create connection
-	$conn= new mysqli($servername,$username,$password,$dbname);
-//if subject is not empty
+
 	if (!empty($_POST['subject']))
 	{
 		//get subject from previous page
 		$phpSubject=$_POST['subject'];
-		$sql="SELECT * FROM contactus WHERE subject='$phpSubject' ";
+		$pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/showComment.php?subject=".$phpSubject."");
 	}
-	//if emoty
+	//if empty
 	else
-	{	$phpSubject="";
-		$sql = "SELECT * FROM contactus ";
+	{	
+		$phpSubject="";
+		$pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/showComment.php?subject=".$phpSubject."");
 	}
 
-	$result=$conn->query($sql);
-	$query = mysqli_query($conn, $sql);
-	
-	if (!$query) {
-		die ('SQL Error: ' . mysqli_error($conn));
-	}
-	//fetch data
-	$row=mysqli_fetch_assoc($result);	
+	if($pageContents!="")
+{
+	$result=json_decode($pageContents,true);	
+}
+
 	?>
 
 <div class="container">
@@ -67,36 +63,44 @@
 	<br/>
 	<br/>
   <h1>User Comment List:&nbsp;<?php echo $phpSubject ?></h1>
-  <p>All Comment.</p>            
-  <table class="table table-condensed" width="100%">			
-  <thead>
-				<tr style="font-size:100%">
-					<th width="2%">No</th>
-					<th width="15%">User Name</th>
-					<th width="20%">User Email</th>
-					<th width="10%">Subject</th>
-					<th width="45%">Comment</th>
-				</tr>
-	</thead>
-	<tbody>
+          
 	<?php
 	//display data by using while loop and display table by table
 			$no 	= 1;
 			$total 	= 0;
-			while ($row = mysqli_fetch_array($query))
+			if($pageContents!="")
 			{
-				echo '<tr>
-						<td style=center>'.$no.'</td>
-						<td>'.$row['username'].'</td>
-						<td>'.$row['useremail'].'</td>
-						<td>'.$row['subject'].'</td>
-						<td>'.$row['message'].'</td>
-				
-						</tr>';
-				$no++;
-			}?>
-			</tbody>
-		</table>
+				echo '  <table class="table table-condensed" width="100%">			
+				<thead>
+							  <tr style="font-size:100%">
+								  <th width="2%">No</th>
+								  <th width="15%">User Name</th>
+								  <th width="20%">User Email</th>
+								  <th width="10%">Subject</th>
+								  <th width="45%">Comment</th>
+							  </tr>
+				  </thead>
+				  <tbody>';
+				foreach ($result['userComment'] as $row)
+				{
+					echo '<tr>
+							<td style=center>'.$no.'</td>
+							<td>'.$row['username'].'</td>
+							<td>'.$row['useremail'].'</td>
+							<td>'.$row['subject'].'</td>
+							<td>'.$row['message'].'</td>
+					
+							</tr>';
+					$no++;
+				}
+				echo '			</tbody>
+				</table>';
+			}
+			else{
+				echo '<h3 style="color:red">No result Found</h3>';
+			}
+		?>
+
 	</div>
 	<div class="noprint" align="center" style="margin:5% ">
 	<br/>

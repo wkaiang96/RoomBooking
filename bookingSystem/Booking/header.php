@@ -59,7 +59,7 @@
 					<div class="dropdown">
 						<button onclick="myFunction()" class="dropbtn">'. $phpName.'</button>
 						  <div id="myDropdown" class="dropdown-content">
-						    <a href="../editProfile.php">My Profile</a>
+						    <a href="editProfile.php">My Profile</a>
 						    <a href="XXXXXXXX.php">Reservation</a>
 						    <a href="../logout.php">LogOut</a>
 						  </div>
