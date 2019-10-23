@@ -25,7 +25,7 @@
 	if (!empty($_SESSION['email']))//check the session (is empty or not)
 	{
 		$phpEmail=$_SESSION['email'];
-		$pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/headerApi.php?email=".$phpEmail);
+		$pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/dataApi.php?email=".$phpEmail."");
 		$result=json_decode($pageContents,true);	
 		$phpName=$result['userDetails'][0]['name'];
 	}

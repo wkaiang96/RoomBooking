@@ -89,7 +89,6 @@
 				</table>
 			</div>
 		</nav>
-		<?php
-		?>
+
 </body>
 </html>
