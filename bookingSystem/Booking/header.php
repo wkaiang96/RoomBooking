@@ -25,7 +25,7 @@
 	if (!empty($_SESSION['email']))
 	{
 		$phpEmail=$_SESSION['email'];
-		$pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/headerApi.php?email=".$phpEmail);
+		$pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/dataApi.php?email=".$phpEmail . "");
 		$result=json_decode($pageContents,true);	
 		$phpName=$result['userDetails'][0]['name'];
 	}
@@ -48,7 +48,7 @@
       <ul class="nav navbar-nav">
      	<li><a href="home.php" id="HS">Home</a></li>
      	<li><a href="aboutUs.php" id="HS">About Us</a></li>
-      	<li><a href="Event1.php" id="HS">Book</a></li>
+      	<li><a href="reserve.php" id="HS">Reservation</a></li>
      	<li><a href="ContactUs.php" id="HS">Contact Us</a></li>
       </ul>
       <?php

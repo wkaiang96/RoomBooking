@@ -89,8 +89,6 @@
 				</table>
 			</div>
 		</nav>
-		<?php
-		mysqli_close($conn);
-		?>
+
 </body>
 </html>

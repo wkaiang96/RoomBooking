@@ -30,7 +30,7 @@
 <body style="margin-top:3.5%;background-color:black" >
 	<?php
 	//import header
-		require('../header.php');
+		require('header.php');
 	?>
 	<br/>
 <div class="w3-content w3-display-container" >
