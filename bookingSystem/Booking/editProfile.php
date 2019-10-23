@@ -15,36 +15,20 @@
 	<?php
 	session_start();
 	//call out the database and server for easy to connect
-	$servername="localhost";		
-	$username="root";
-	$password="";
-	$dbname="gcreation";
-	
-	//create connection
-	$conn= new mysqli($servername,$username,$password,$dbname);
-	
-	//check connection
-	if($conn->connect_error)
-	{
-		die("Connection failed:".$conn->connect_error);
-	}
-	//get the email from session
-	$phpEmail=$_SESSION['email'];
-	//select all the data according to the session
-	$sql="SELECT * FROM userdata WHERE email='$phpEmail'";	
-	//create connection
-	$result=$conn->query($sql);	
-	//fetch data
-	$row=mysqli_fetch_assoc($result);
-	?>
-	<?php
+  $phpEmail=$_SESSION['email'];
+  $pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/dataApi.php?email=".$phpEmail."");
+  $result=json_decode($pageContents,true);	
+  $phpName=$result['userDetails'][0]['name'];
+  $phpPhone=$result['userDetails'][0]['phoneNo'];
+  $phpPassword=$result['userDetails'][0]['password'];
+  $phpUserType=$result['userDetails'][0]['type'];
 	//check the user type to display the header
-		if($row['type']=="User")
+		if($phpUserType=="User")
 	{
 		require('header.php');
 	}
 	
-	if($row['type']=="Admin")
+	if($phpUserType=="Admin")
 	{
 		require('AdminHeader.php');
 	}
@@ -65,24 +49,24 @@
         </div>
         <h3>Personal info</h3>
         
-        <form class="form-horizontal" role="form" action="edit.php" method="post">
+        <form class="form-horizontal" role="form" action="../edit.php" method="post">
            <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <b><?php echo $row['email']?></b>
+              <b><?php echo $phpEmail?></b>
             </div>
           </div>
 
           <div class="form-group">
             <label class="col-lg-3 control-label">Name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" name="e_name" value="<?php echo $row['name']?>"/>
+              <input class="form-control" type="text" name="e_name" value="<?php echo $phpName?>"/>
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Phone Number:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="<?php echo $row['phoneNo']?>" name="e_pn"/>
+              <input class="form-control" type="text" value="<?php echo $phpPhone?>" name="e_pn"/>
             </div>
           </div>
           <div class="form-group">
@@ -108,9 +92,9 @@
 		<br/>
 		<br/>
 	<?php
- if($row['type']=="User")
+ if($phpUserType=="User")
 	{		
-		echo '	<form class="form-horizontal" role="form" action="delete.php" method="post">
+		echo '	<form class="form-horizontal" role="form" action="../delete.php" method="post">
 		  <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
