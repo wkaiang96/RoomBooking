@@ -4,7 +4,6 @@
 	$username="root";
 	$password="";
 	$dbname="gcreation";
-	$session_start;
 	//create connection
     $conn= new mysqli($servername,$username,$password,$dbname);
     
