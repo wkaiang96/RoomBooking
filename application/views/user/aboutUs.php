@@ -40,7 +40,7 @@
 					
 				</div>
 				<div class="col-md-4 about-right">
-				<img src="img/logo.png" alt=" logo " />
+				<img src="../img/logo.png" alt=" logo " />
 			</div>
 				<div class="clearfix"> </div>
 			</div>

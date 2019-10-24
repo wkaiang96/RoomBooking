@@ -50,7 +50,7 @@
 		{
 		  die('<script type="text/javascript">
 			alert("Edit Successful!")
-			location.href="editprofile.php"
+			location.href="Booking/editprofile.php"
 			</script>'
 		);
 		}
@@ -59,7 +59,7 @@
 		{
 		  die('<script type="text/javascript">
 			alert("Error Please try again!")
-			location.href="editprofile.php"
+			location.href="Booking/editprofile.php"
 			</script>'
 		);
 

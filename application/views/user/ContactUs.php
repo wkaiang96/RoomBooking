@@ -15,29 +15,13 @@
 	
 	session_start();
 	
-	$servername="localhost";		
-	$username="root";
-	$password="";
-	$dbname="gcreation";
-	
-	//create connection
-	$conn= new mysqli($servername,$username,$password,$dbname);
-	
-	//check connection
-	if($conn->connect_error)
-	{
-		die("Connection failed:".$conn->connect_error);
-	}
 	if (!empty($_SESSION['email']))
 	{
-	$phpEmail=$_SESSION['email'];
-	//select all the data according to the session
-	$sql="SELECT * FROM userdata WHERE email='$phpEmail'";
-	
-	$result=$conn->query($sql);
-	
-	$row=mysqli_fetch_assoc($result);
-	
+    //select all the data according to the session
+    $phpEmail=$_SESSION['email'];
+    $pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/dataApi.php?email=".$phpEmail."");
+    $result=json_decode($pageContents,true);	
+    $phpName=$result['userDetails'][0]['name'];
 
 echo '
 	
@@ -61,7 +45,7 @@ echo '
                         <div class="form-group">
                             <label for="name">
                                 Name</label>
-                            <input type="text" class="form-control" id="name" name="UserName" value="'.$row['name'] .'" required="required" />
+                            <input type="text" class="form-control" id="name" name="UserName" value="'.$phpName.'" required="required" />
                         </div>
                         <div class="form-group">
                             <label for="email">
@@ -69,7 +53,7 @@ echo '
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
                                 </span>
-                                <input type="email" class="form-control" id="email" name="UserEmail" value="'.$row['email'] .'" required="required" /></div>
+                                <input type="email" class="form-control" id="email" name="UserEmail" value="'.$phpEmail.'" required="required" /></div>
                         </div>
                         <div class="form-group">
                             <label for="subject">
