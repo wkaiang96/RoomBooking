@@ -11,7 +11,7 @@ session_start();
 //destory it 
 session_destroy();
 echo '<script type="text/javascript">alert("Logout Successful")</script>';
-header("location:Booking/home.php");
+header("location:http://localhost/roomBooking/index.php");
 $conn->close();
 ?>
 <body>

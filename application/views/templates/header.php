@@ -41,12 +41,12 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid col-lg-12">
     <div class="navbar-header">
-    	<a href="home.php" class="navbar-brand"><img src="http://localhost/roomBooking/img/logo.png" width="115px" /></a>
-    	<a class="navbar-brand" href="home.php" id="HS">G Creation</a>
+    	<a href="http://localhost/roomBooking/index.php" class="navbar-brand"><img src="http://localhost/roomBooking/img/logo.png" width="115px" /></a>
+    	<a class="navbar-brand" href="http://localhost/roomBooking/index.php" id="HS">G Creation</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-     	<li><a href="home.php" id="HS">Home</a></li>
+     	<li><a href="http://localhost/roomBooking/index.php" id="HS">Home</a></li>
      	<li><a href="aboutUs.php" id="HS">About Us</a></li>
       	<li><a href="reserve.php" id="HS">Reservation</a></li>
      	<li><a href="ContactUs.php" id="HS">Contact Us</a></li>
@@ -61,7 +61,7 @@
 						  <div id="myDropdown" class="dropdown-content">
 						    <a href="editProfile.php">My Profile</a>
 						    <a href="XXXXXXXX.php">Reservation</a>
-						    <a href="http://localhost/roomBooking/logout.php">LogOut</a>
+						    <a href="http://localhost/roomBooking/bookingSystem/logout.php">LogOut</a>
 						  </div>
 					</div>
 					<script>
@@ -100,10 +100,10 @@
 							<br/>
 							<a class="close" href="#">&times;</a>
 							<div class="content">
-							<a href="UserLogin.php"><input type="button" value="User Login" class="btn btn-success" style="width:100%"/></a>
+							<a href="' . base_url() . 'index.php/UserLogin"><input type="button" value="User Login" class="btn btn-success" style="width:100%"/></a>
 							<br/>
 							<br/>
-							<a href="AdminLogin.php"><input type="button" value="Admin Login" class="btn btn-primary" style="width:100%"/></a>
+							<a href="' . base_url() . 'index.php/admin/AdminLogin"><input type="button" value="Admin Login" class="btn btn-primary" style="width:100%"/></a>
 							</div>
 							</div>
 						</div>

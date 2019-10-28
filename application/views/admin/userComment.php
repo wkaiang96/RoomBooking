@@ -9,10 +9,7 @@
 </head>
 
 <body style="margin-top:7%">
-	<?php
-	//import admin header
-		require('AdminHeader.php');
-	?>
+
 <?php
 //session start
 	//create connection
@@ -108,10 +105,7 @@
 	<a href="javascript:window.print()"><input name="Submit1" type="submit" value="Print" /></a>
 	
 	</div>
-<?php
-//import footer
-	require('footer.php');
-?>
+
 
 </body>
 

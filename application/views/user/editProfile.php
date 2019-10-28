@@ -13,7 +13,6 @@
 
 <body>
 	<?php
-	session_start();
 	//call out the database and server for easy to connect
   $phpEmail=$_SESSION['email'];
   $pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/dataApi.php?email=".$phpEmail."");
@@ -23,18 +22,10 @@
   $phpPassword=$result['userDetails'][0]['password'];
   $phpUserType=$result['userDetails'][0]['type'];
 	//check the user type to display the header
-		if($phpUserType=="User")
-	{
-		require('header.php');
-	}
-	
-	if($phpUserType=="Admin")
-	{
-		require('AdminHeader.php');
-	}
+
 
 	?>
-	
+	<br/>
 <div class="container" style="margin-top:2%">
     <h1>Edit Profile</h1>
   	<hr/>
@@ -49,7 +40,7 @@
         </div>
         <h3>Personal info</h3>
         
-        <form class="form-horizontal" role="form" action="../edit.php" method="post">
+        <form class="form-horizontal" role="form" action="http://localhost/roomBooking/bookingSystem/edit.php" method="post">
            <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
@@ -84,7 +75,7 @@
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-              <a href="edit.php"><input type="submit" class="btn btn-primary" onclick="return confirm('Are You sure?')" value="Save Changes"/></a>
+              <a href="http://localhost/roomBooking/bookingSystem/edit.php"><input type="submit" class="btn btn-primary" onclick="return confirm('Are You sure?')" value="Save Changes"/></a>
               <input type="reset" class="btn btn-default" value="Cancel"/>
             </div>
           </div>
@@ -94,7 +85,7 @@
 	<?php
  if($phpUserType=="User")
 	{		
-		echo '	<form class="form-horizontal" role="form" action="../delete.php" method="post">
+		echo '	<form class="form-horizontal" role="form" action="http://localhost/roomBooking/bookingSystem/delete.php" method="post">
 		  <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
@@ -108,9 +99,7 @@
   </div>
 </div>
 <hr/>	
-<?php
-		require('footer.php');
-	?>
+
 
 </body>
 

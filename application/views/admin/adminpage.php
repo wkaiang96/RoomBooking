@@ -4,15 +4,12 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>About Us</title>
-<link rel="stylesheet" type="text/css" href="aboutUs.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost/roomBooking/references/aboutUs.css"/>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 </head>
 
 <body>
-	<?php //import header
-		require('AdminHeader.php');
-	?>
 
 <div class="about-section"><!--using bootstrap to design layout---->
 		<div class="container">
@@ -42,17 +39,12 @@
 					</ul>
 				</div>
 				<div class="col-md-4 about-right">
-				<img src="../img/logo.png" alt=" logo " />
+				<img src="http://localhost/roomBooking/img/logo.png" alt=" logo " />
 			</div>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-
-
-		<?php //import footer
-		require('footer.php');
-	?>
 
 </body>
 

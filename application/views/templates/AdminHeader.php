@@ -3,11 +3,11 @@
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<link rel="stylesheet" type="text/css" href="Popup.css"/>
-<link rel="stylesheet" type="text/css" href="dropdownUser.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost/roomBooking/references/Popup.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost/roomBooking/references/dropdownUser.css"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-<script src="jquery.min.js"></script>
-<script src="bootstrap.min.js"></script>
+<script src="http://localhost/roomBooking/references/jquery.min.js"></script>
+<script src="http://localhost/roomBooking/references/bootstrap.min.js"></script>
 <style type="text/css">
 
 #HS{
@@ -38,15 +38,15 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid col-lg-12">
     <div class="navbar-header">
-    	<a href="#" class="navbar-brand"><img src="../img/logo.png" width="115px" /></a>
+    	<a href="#" class="navbar-brand"><img src="http://localhost/roomBooking/img/logo.png" width="115px" /></a>
     	<a class="navbar-brand" href="#" id="HS">G Creation</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-     	<li><a href="adminpage.php" id="HS">Mission</a></li>
+     	<li><a href="adminpage" id="HS">Mission</a></li>
      	<li><a href="EventApply.php" id="HS">Reservation</a></li>
       	<li><a href="eventList.php" id="HS">Room List</a></li>
-      	<li><a href="userComment.php" id="HS">User Comment</a></li>
+      	<li><a href="userComment" id="HS">User Comment</a></li>
       </ul>
       <?php
       		if ($phpEmail!="a"){// if the admin already sign in (display logout and edit button)
@@ -56,7 +56,7 @@
 						<button onclick="myFunction()" class="dropbtn" >'. $phpName.'</button>
 						  <div id="myDropdown" class="dropdown-content">
 						    <a href="editProfile.php">My Profile</a>
-						    <a href="../logout.php">LogOut</a>
+						    <a href="http://localhost/roomBooking/bookingSystem/logout.php">LogOut</a>
 						  </div>
 					</div>
 					<script>
@@ -113,4 +113,3 @@
 </nav>
 </div>
 
-		        
