@@ -47,9 +47,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
      	<li><a href="http://localhost/roomBooking/index.php" id="HS">Home</a></li>
-     	<li><a href="aboutUs.php" id="HS">About Us</a></li>
-      	<li><a href="reserve.php" id="HS">Reservation</a></li>
-     	<li><a href="ContactUs.php" id="HS">Contact Us</a></li>
+     	<li><a href="http://localhost/roomBooking/index.php/user/aboutUs" id="HS">About Us</a></li>
+      	<li><a href="http://localhost/roomBooking/index.php/user/reserve" id="HS">Reservation</a></li>
+     	<li><a href="http://localhost/roomBooking/index.php/user/ContactUs" id="HS">Contact Us</a></li>
       </ul>
       <?php
 		//if variable equal to a then diaplay the header that user havent login
@@ -61,7 +61,7 @@
 						  <div id="myDropdown" class="dropdown-content">
 						    <a href="editProfile.php">My Profile</a>
 						    <a href="XXXXXXXX.php">Reservation</a>
-						    <a href="http://localhost/roomBooking/bookingSystem/logout.php">LogOut</a>
+						    <a href="http://localhost/roomBooking/index.php/logout">LogOut</a>
 						  </div>
 					</div>
 					<script>

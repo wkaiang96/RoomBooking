@@ -38,15 +38,15 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid col-lg-12">
     <div class="navbar-header">
-    	<a href="#" class="navbar-brand"><img src="http://localhost/roomBooking/img/logo.png" width="115px" /></a>
+    	<a href="http://localhost/roomBooking/index.php/admin/adminpage" class="navbar-brand"><img src="http://localhost/roomBooking/img/logo.png" width="115px" /></a>
     	<a class="navbar-brand" href="#" id="HS">G Creation</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-     	<li><a href="adminpage" id="HS">Mission</a></li>
-     	<li><a href="EventApply.php" id="HS">Reservation</a></li>
-      	<li><a href="eventList.php" id="HS">Room List</a></li>
-      	<li><a href="userComment" id="HS">User Comment</a></li>
+     	<li><a href="http://localhost/roomBooking/index.php/admin/adminpage" id="HS">Mission</a></li>
+     	<li><a href="http://localhost/roomBooking/index.php/admin/EventApply" id="HS">Reservation</a></li>
+      	<li><a href="http://localhost/roomBooking/index.php/admin/eventList" id="HS">Room List</a></li>
+      	<li><a href="http://localhost/roomBooking/index.php/admin/userComment" id="HS">User Comment</a></li>
       </ul>
       <?php
       		if ($phpEmail!="a"){// if the admin already sign in (display logout and edit button)
@@ -56,7 +56,7 @@
 						<button onclick="myFunction()" class="dropbtn" >'. $phpName.'</button>
 						  <div id="myDropdown" class="dropdown-content">
 						    <a href="editProfile.php">My Profile</a>
-						    <a href="http://localhost/roomBooking/bookingSystem/logout.php">LogOut</a>
+						    <a href="http://localhost/roomBooking/index.php/logout">LogOut</a>
 						  </div>
 					</div>
 					<script>
@@ -94,10 +94,10 @@
 							<br/>
 							<a class="close" href="#">&times;</a>
 							<div class="content">
-							<a href="UserLogin.php"><input type="button" value="User Login" class="btn btn-success" style="width:100%"/></a>
+							<a href="' . base_url() . 'index.php/UserLogin"><input type="button" value="User Login" class="btn btn-success" style="width:100%"/></a>
 							<br/>
 							<br/>
-							<a href="AdminLogin.php"><input type="button" value="Admin Login" class="btn btn-primary" style="width:100%"/></a>
+							<a href="' . base_url() . 'index.php/admin/AdminLogin"><input type="button" value="Admin Login" class="btn btn-primary" style="width:100%"/></a>
 							</div>
 							</div>
 						</div>
