@@ -35,7 +35,7 @@
 		{	session_destroy();
 		  	die('<script type="text/javascript">
 			alert("Account has been Deleted!")
-			location.href="home.php"
+			location.href="http://localhost/roomBooking/index.php"
 			</script>');
 		}
 	
@@ -43,7 +43,7 @@
 		{
 		  die('<script type="text/javascript">
 			alert("Error Please try again!")
-			location.href="editprofile.php"
+			location.href="http://localhost/roomBooking/index.php/editProfile"
 			</script>');
 
 		}	

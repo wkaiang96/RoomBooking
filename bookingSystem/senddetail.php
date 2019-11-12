@@ -39,7 +39,7 @@ $sql="INSERT INTO contactus (username,useremail,subject,message) VALUES ('$phpNa
 		{
 			die('<script>
 			alert("Comment Send!")
-			location.href="home.php"
+			location.href="http://localhost/roomBooking/index.php"
 			</script>');
 
 		}
@@ -48,7 +48,7 @@ $sql="INSERT INTO contactus (username,useremail,subject,message) VALUES ('$phpNa
 		{
 			die('<script>
 			alert("Sorry Something Went Wrong!")
-			location.href="home.php"
+			location.href="http://localhost/roomBooking/index.php"
 			</script>');
 		}
 	?>

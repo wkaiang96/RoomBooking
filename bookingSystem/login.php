@@ -58,7 +58,7 @@
 		{
 		die('<script>
 			alert("Login Error!")
-			location.href="userLogin.php"
+			location.href="http://localhost/roomBooking/index.php"
 			</script>');
 
 		}

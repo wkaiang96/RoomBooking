@@ -55,8 +55,8 @@
 					<div class="dropdown">
 						<button onclick="myFunction()" class="dropbtn" >'. $phpName.'</button>
 						  <div id="myDropdown" class="dropdown-content">
-						    <a href="editProfile.php">My Profile</a>
-						    <a href="http://localhost/roomBooking/index.php/logout">LogOut</a>
+						    <a href="http://localhost/roomBooking/index.php/admin/editProfile">My Profile</a>
+						    <a href="http://localhost/roomBooking/bookingSystem/logout.php">LogOut</a>
 						  </div>
 					</div>
 					<script>
