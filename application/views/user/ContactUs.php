@@ -11,9 +11,6 @@
 
 <body >
 	<?php
-		require('header.php');
-	
-	session_start();
 	
 	if (!empty($_SESSION['email']))
 	{
@@ -39,7 +36,7 @@ echo '
     <div class="row">
         <div class="col-md-8">
             <div class="well well-sm">
-                <form action="senddetail.php" method="post">
+                <form action="http://localhost/roomBooking/bookingSystem/senddetail.php" method="post">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -99,7 +96,7 @@ echo '
     <div class="row">
         <div class="col-md-8">
             <div class="well well-sm">
-                <form action="senddetail.php" method="post">
+                <form action="http://localhost/roomBooking/bookingSystem/senddetail.php" method="post">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -163,9 +160,7 @@ echo '
 </div>
 <br/>
 <br/>
-<?php
-		require('footer.php');
-	?>
+
 
 </body>
 

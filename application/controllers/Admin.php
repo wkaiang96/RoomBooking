@@ -13,8 +13,13 @@ class Admin extends CI_Controller
 
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 
-//		$this->load->view('templates/header', $data);
+		if($page != 'AdminLogin'){
+			$this->load->view('templates/AdminHeader', $data);
+			$this->load->view('admin/'.$page, $data);
+			$this->load->view('templates/footer', $data);
+		}
+
 		$this->load->view('admin/'.$page, $data);
-//		$this->load->view('templates/footer', $data);
+
 	}
 }

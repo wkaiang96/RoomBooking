@@ -11,10 +11,17 @@ class User extends CI_Controller
 			show_404();
 		}
 
-		$data['title'] = ucfirst($page); // Capitalize the first letter
 
-		$this->load->view('templates/header', $data);
-		$this->load->view('user/'.$page, $data);
-		$this->load->view('templates/footer', $data);
+		$data['title'] = ucfirst($page); // Capitalize the first letter
+		if($page == 'UserLogin'){
+			//$this->load->view('templates/AdminHeader', $data);
+			$this->load->view('user/'.$page, $data);
+			//$this->load->view('templates/footer', $data);
+		}else{
+			$this->load->helper('url');
+			$this->load->view('templates/header', $data);
+			$this->load->view('user/'.$page, $data);
+			$this->load->view('templates/footer', $data);
+		}
 	}
 }

@@ -4,15 +4,12 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>About Us</title>
-<link rel="stylesheet" type="text/css" href="aboutUs.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost/roomBooking/references/aboutUs.css"/>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 </head>
 
-<body style="background-color:black"> <!----import the header------>
-	<?php
-		require('header.php');
-	?>
+<body style="background-color:black">
 
 <div class="about-section" style="background-color:white">
 		<div class="container" >
@@ -40,7 +37,7 @@
 					
 				</div>
 				<div class="col-md-4 about-right">
-				<img src="../img/logo.png" alt=" logo " />
+				<img src="http://localhost/roomBooking/img/logo.png" alt=" logo " />
 			</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -48,9 +45,7 @@
 	</div>
 
 <!----import the footer------>
-		<div ><?php
-		require('footer.php');
-	?>
+		<div >
 </div>
 </body>
 

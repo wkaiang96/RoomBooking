@@ -46,12 +46,12 @@
 			if($row['type']=="User")
 			{
 			//script = is mean control the things and jump it into the another pages
-				die('<script>location.href="Booking/home.php"</script>');
+				die('<script>location.href="http://localhost/roomBooking/index.php"</script>');
 			}
 			else if ($row['type']=="Admin")
 			{
 			//script = is mean control the things and jump it into the another pages
-				die('<script>location.href="Booking/adminpage.php"</script>');
+				die('<script>location.href="http://localhost/roomBooking/index.php/admin/adminpage"</script>');
 			}
 		}
 		else
