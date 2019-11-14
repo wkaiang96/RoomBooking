@@ -8,13 +8,13 @@
 <body style="margin-top:3.5%;background-color:black" >
 	<?php
 	//import header
-		require('header.php');
+		require('http://localhost/roomBooking/application/views/templates/header.php');
 	?>
 	
 
 
 	<?php
-		require('footer.php');
+		require('http://localhost/roomBooking/application/views/templates/footer.php');
 	?>
 </body>
 

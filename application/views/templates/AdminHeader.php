@@ -44,8 +44,8 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
      	<li><a href="http://localhost/roomBooking/index.php/admin/adminpage" id="HS">Mission</a></li>
-     	<li><a href="http://localhost/roomBooking/index.php/admin/EventApply" id="HS">Reservation</a></li>
-      	<li><a href="http://localhost/roomBooking/index.php/admin/eventList" id="HS">Room List</a></li>
+     	<li><a href="http://localhost/roomBooking/bookingSystem/Booking/reserve.php" id="HS">Booking</a></li>
+      	<li><a href="http://localhost/roomBooking/bookingSystem/Booking/reservationAll.php" id="HS">Reservation</a></li>
       	<li><a href="http://localhost/roomBooking/index.php/admin/userComment" id="HS">User Comment</a></li>
       </ul>
       <?php

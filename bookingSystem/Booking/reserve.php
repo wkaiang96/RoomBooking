@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-	include('header.php');
+	include('http://localhost/roomBooking/application/views/templates/header.php');
 ?>
 
 
@@ -17,9 +17,9 @@
   <table style="width:60%;margin: 0 20% 0 20%">
 
   <td>
-    <img src="../img/event1.png" alt="room" width="400px" height="250px" />
+    <img src="http://localhost/roomBooking/bookingSystem/img/event1.png" alt="room" width="400px" height="250px" />
     <p><b>Room A & B for small group of people(6-8 people).</b></p>
-    <img src="../img/event2.png" alt="room" width="400px" height="250px" />
+    <img src="http://localhost/roomBooking/bookingSystem/img/event2.png" alt="room" width="400px" height="250px" />
     <p><b>Room C & D for huge group of people(12-15 people).</b></p>
   </td>
 
@@ -36,7 +36,7 @@
     </div>
 
     <div class="form-group" style="text-align:left">
-      <form action="../reserveR.php" method="post">
+      <form action="http://localhost/roomBooking/bookingSystem/reserveR.php" method="post">
         <b>Date: </b>
           <input type="date" name="bookdate" >
           <p>   </p>
@@ -63,7 +63,7 @@
   </table>
 </div>
 <?php
-	require('footer.php');
+	require('http://localhost/roomBooking/application/views/templates/footer.php');
 ?>
 </body>
 </html>
