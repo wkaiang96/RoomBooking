@@ -36,7 +36,7 @@
 
 <div class="container">
   <div class="col-sm-12">  
-	  <form method="post" action="userComment.php">
+	  <form method="post" action="http://localhost/roomBooking/index.php/admin/userComment">
 		<table >
 			<tr >
 				<td >

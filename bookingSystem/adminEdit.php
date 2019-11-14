@@ -37,7 +37,7 @@
 	{
 		  die('<script type="text/javascript">
 			alert("Please fill in the password!")
-			location.href="http://localhost/roomBooking/index.php/editprofile"
+			location.href="http://localhost/roomBooking/index.php/admin/editprofile"
 			</script>'
 		);		
 	}
@@ -50,7 +50,7 @@
 		{
 		  die('<script type="text/javascript">
 			alert("Edit Successful!")
-			location.href="http://localhost/roomBooking/index.php/editprofile"
+			location.href="http://localhost/roomBooking/index.php/admin/editprofile"
 			</script>'
 		);
 		}
@@ -59,7 +59,7 @@
 		{
 		  die('<script type="text/javascript">
 			alert("Error Please try again!")
-			location.href="http://localhost/roomBooking/index.php/editprofile"
+			location.href="http://localhost/roomBooking/index.php/admin/editprofile"
 			</script>'
 		);
 
@@ -68,7 +68,7 @@
 	else{
 	die('<script type="text/javascript">
 	alert("Password and Confirm password not same!")
-	location.href="http://localhost/roomBooking/index.php/editprofile"
+	location.href="http://localhost/roomBooking/index.php/admin/editprofile"
 	</script>');
 	}
 	?>

@@ -54,7 +54,7 @@
 				</tr>
 				<tr>
 					<td align="left" style="height: 30px" class="auto-style2">Business Hours : 8.30am-6.30am (Penang Island)</td>
-					<td style="height: 30px" class="auto-style2"><a href="home.php">Home</a></td>
+					<td style="height: 30px" class="auto-style2"><a href="http://localhost/roomBooking/index.php">Home</a></td>
 				</tr>
 				<span class="auto-style1"><span class="auto-style2">
 				<tr>
@@ -67,13 +67,13 @@
 				</tr>
 				<tr>
 					<td align="left" style="height: 28px">Hotline : 04-238 8858</td>
-					<td style="height: 30px"><a href="aboutUs.php">About Us</a></td>
+					<td style="height: 30px"><a href="http://localhost/roomBooking/index.php/aboutUs">About Us</a></td>
 					<td rowspan="3"><img src="http://localhost/roomBooking/img/logo.png" width="30%" alt="Company_Logo"/></td>
 
 				</tr>
 				<tr>
 					<td align="left" style="height: 30px">&nbsp;E-mail : <a href="mailto:#">GCreation.PMY@outlook.com</a>
-					<td style="height: 28px"><a href="ContactUs.php">Contact Us</a></td>
+					<td style="height: 28px"><a href="http://localhost/roomBooking/index.php/contactus">Contact Us</a></td>
 
 				</tr>
 				<tr>
