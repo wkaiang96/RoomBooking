@@ -28,50 +28,60 @@
 <?php
 //get all the data from previous page by name
 	$phpEmail=$_SESSION['email'];
-	$phpName=$_POST['e_name'];
-	$phpPhone=$_POST['e_pn'];
-	$phpPassword=$_POST['e_pw'];
-	$phpCPn=$_POST['e_cpw'];
+	$date=$_POST['date'];
+	$slot=$_POST['slot'];
+	$roomT=$_POST['roomT'];
 	
-	if(empty($phpPassword) or empty($phpCPn))
-	{
-		  die('<script type="text/javascript">
-			alert("Please fill in the password!")
-			location.href="http://localhost/roomBooking/index.php/editprofile"
-			</script>'
-		);		
-	}
-//if confirm password equal to password
-	if ($phpPassword==$phpCPn){	
 	//update the database
-	$sql="UPDATE userdata SET  name='$phpName', phoneNo='$phpPhone', password='$phpPassword' WHERE email='$phpEmail'";
-			
-		if($conn->query($sql)==TRUE)
-		{
-		  die('<script type="text/javascript">
-			alert("Edit Successful!")
-			location.href="http://localhost/roomBooking/index.php/editprofile"
-			</script>'
-		);
-		}
+	$sql="UPDATE room SET date='$date', slot='$slot', roomT='$roomT' WHERE email='$phpEmail'";
 	
-		else
-		{
-		  die('<script type="text/javascript">
-			alert("Error Please try again!")
-			location.href="http://localhost/roomBooking/index.php/editprofile"
-			</script>'
-		);
+			
+	if ($result === TRUE) {
 
-		}	
+		echo "<div class='alert alert-success'>";
+		echo "<strong> Updated successfully </strong>";
+		echo "</div>";
+		header( "refresh:2;url=dataApi.php" );
+	} else {
+		echo "<script type='text/javascript'>alert('Failed');</script>" . $sql . "<br>" . mysqli_error($conn);
 	}
-	else{
-	die('<script type="text/javascript">
-	alert("Password and Confirm password not same!")
-	location.href="http://localhost/roomBooking/index.php/editprofile"
-	</script>');
-	}
-	?>
+
+?>
+		<h2>Booking Edit <?php echo $row['0']; ?></h2>
+		<hr>
+
+
+		<div class="form-group">
+		<label style="font-size: 14px">Date</label>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+		<input type="date" name="date" class="form-control"  required>
+		</div>
+		</div>
+
+		<div class="form-group">
+		<label style="font-size: 14px">slot</label>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+		<input type="text" name="slot" class="form-control"  required>
+		</div>
+		</div>
+
+		<div class="form-group">
+		<label style="font-size: 14px">Room</label>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+		<input type="text" name="roomT" class="form-control"  required>
+		</div>
+		</div>
+
+		<input type="hidden" name="id" value="<?php echo $row['0']; ?>">
+
+		<div class="form-group">
+		<button type="submit" name="updatebooking" class="btn btn-primary btn-lg">Update</button>
+</div>
+
+</form>
 
 <body>
 
