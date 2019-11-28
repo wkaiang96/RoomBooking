@@ -90,7 +90,7 @@ $row=mysqli_fetch_assoc($result);
             echo "<td style='text-align: center'>" . "$row[slot]" . " </td>";
             echo "<td style='text-align: center'>" . "$row[email]" . " </td>";
             echo "<td style='text-align: center'>" . "$row[roomT]" . " </td>";
-            echo "<td style='text-align: center'>"."<button type='button' onClick= updateRow($row[ID]) class='btn btn-primary btn-sm' name='ID' style='margin-right:3%;font-size:14px'> <span class='glyphicon glyphicon-edit'></span> Edit</button>".
+            echo "<td style='text-align: center'>".
                  "<button type= 'button' onClick= deleteRow($row[ID]) class='btn btn-danger btn-primary btn-sm' name='ID' style='font-size:14px'> <span class='glyphicon glyphicon-trash'></span> Delete</button></td>";
             echo "<input type='hidden' name='ID' value='" . $row["ID"] . "' >";												
             echo "</tr>";
@@ -106,7 +106,8 @@ $row=mysqli_fetch_assoc($result);
 
 function deleteRow(ID)
 {
-    if(confirm("Confirmation in deleting this booking?")){
+    if(confirm("Confirmation in deleting this booking?"))
+    {
         window.location.href='delete.php?deleted_id='+ID+'';
         return true;
     }

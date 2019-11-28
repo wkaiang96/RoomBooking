@@ -35,7 +35,20 @@
 	//update the database
 	$sql="UPDATE room SET date='$date', slot='$slot', roomT='$roomT' WHERE email='$phpEmail'";
 	
-			
+	if(isset($_GET['update_email'])){
+		$phpEmail = $_GET['update_email'];
+		$sql = "SELECT * FROM room WHERE email="."$_GET[update_email]";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_array($result);
+	}
+
+	if(isset($_POST['updateTime'])){
+
+		$phpEmail = $_POST['id'];
+		$dateAppointment = $_POST['appointment'];
+		$startTime = $_POST['start_time'];
+		$endTime = $_POST['end_time'];
+
 	if ($result === TRUE) {
 
 		echo "<div class='alert alert-success'>";
