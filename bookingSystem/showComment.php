@@ -14,7 +14,7 @@
 		die("Connection failed:".$conn->connect_error);
     }
 
-    $phpSubject=$_REQUEST['subject'];//to get the url value
+    $phpSubject= isset($_REQUEST['subject']) ? $_REQUEST['subject'] : null;//to get the url value
     if (!empty($phpSubject))
 	{
 		//get subject from previous page
