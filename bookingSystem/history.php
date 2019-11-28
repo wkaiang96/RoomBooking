@@ -113,12 +113,6 @@ function deleteRow(ID)
     }
 }
 
-function updateRow(ID)
-{
-    window.location.href='edit.php?update_id='+ID+'';
-    return true;
-}
-
 </script>
 </table>
 </div>
