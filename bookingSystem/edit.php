@@ -42,23 +42,23 @@
 		$row = mysqli_fetch_array($result);
 	}
 
-	if(isset($_POST['updateTime'])){
+	if(isset($_POST['updateTime'])) {
 
 		$phpEmail = $_POST['id'];
 		$dateAppointment = $_POST['appointment'];
 		$startTime = $_POST['start_time'];
 		$endTime = $_POST['end_time'];
 
-	if ($result === TRUE) {
+		if ($result === TRUE) {
 
-		echo "<div class='alert alert-success'>";
-		echo "<strong> Updated successfully </strong>";
-		echo "</div>";
-		header( "refresh:2;url=dataApi.php" );
-	} else {
-		echo "<script type='text/javascript'>alert('Failed');</script>" . $sql . "<br>" . mysqli_error($conn);
+			echo "<div class='alert alert-success'>";
+			echo "<strong> Updated successfully </strong>";
+			echo "</div>";
+			header("refresh:2;url=dataApi.php");
+		} else {
+			echo "<script type='text/javascript'>alert('Failed');</script>" . $sql . "<br>" . mysqli_error($conn);
+		}
 	}
-
 ?>
 		<h2>Booking Edit <?php echo $row['0']; ?></h2>
 		<hr>
