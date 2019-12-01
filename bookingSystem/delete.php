@@ -29,18 +29,20 @@
 //get email from the section
 	$phpEmail=$_SESSION['email'];
 //create SQL
-	$sql="DELETE FROM userdata WHERE email='$phpEmail'";
+	$id = $_REQUEST['deleted_id'];
+	$sql="DELETE FROM room WHERE ID='$id'";
 //check the connection of the server and the SQL
 		if($conn->query($sql)==TRUE)
 		{	session_destroy();
 		  	die('<script type="text/javascript">
-			alert("Account has been Deleted!")
+			alert("Booking has been Deleted!")
 			location.href="home.php"
 			</script>');
 		}
 	
 		else
 		{
+			// echo mysqli_error($conn);
 		  die('<script type="text/javascript">
 			alert("Error Please try again!")
 			location.href="editprofile.php"

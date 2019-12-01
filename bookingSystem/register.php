@@ -45,7 +45,7 @@ if($phpEmail!=$row2['email'])
 	{
 		die('<script>
 			alert("Password and Confirm password is different!")
-			location.href="userLogin.php"
+			location.href="http://localhost/roomBooking/index.php/userLogin"
 			</script>');
 
 	}
@@ -58,14 +58,14 @@ if($phpEmail!=$row2['email'])
 			if($conn->query($sql)==TRUE)
 		{
 			 die("<script>alert('Register Successful!')
-			 location.href='home.php'</script>");
+			 location.href='http://localhost/roomBooking/index.php'</script>");
 		}
 	
 			else
 		{
 			die('<script>
 			alert("Sorry Something Went Wrong!")
-			location.href="userLogin.php"
+			location.href="http://localhost/roomBooking/index.php/userLogin"
 			</script>');
 		}
 	}
@@ -73,7 +73,7 @@ if($phpEmail!=$row2['email'])
 else
 {
 	echo '<script>alert("The EMAIL You Key In Already Exist!!")
-	window.location= "login.php"</script>';
+	window.location= "http://localhost/roomBooking/index.php"</script>';
 }	
 
 	?>

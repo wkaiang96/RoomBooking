@@ -16,51 +16,46 @@
 
 </style>
 </head>
-
+<!--Admin header will be differet with user header this i sbecause admin header is use to manage all the details and event details---->
 <body>
 <?php
-//session start
+//start the session
 	session_start();
-	//if session email is not empty
-	if (!empty($_SESSION['email']))
+
+	if (!empty($_SESSION['email']))//check the session (is empty or not)
 	{
 		$phpEmail=$_SESSION['email'];
-		$pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/dataApi.php?email=".$phpEmail . "");
+		$pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/dataApi.php?email=".$phpEmail."");
 		$result=json_decode($pageContents,true);	
 		$phpName=$result['userDetails'][0]['name'];
 	}
-	//if session email is empty
-	else
-	{	//variable equal to a
-		$phpEmail="a";
-	}
-	?>
-
-
-<div class="col-lg-12">
+	else// if the session is empty then put a become value
+{	
+	$phpEmail="a";
+}
+?>
+<div class="col-lg-12"> <!--using bootstrap to set and design the header---->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid col-lg-12">
     <div class="navbar-header">
-    	<a href="http://localhost/roomBooking/index.php" class="navbar-brand"><img src="http://localhost/roomBooking/img/logo.png" width="115px" /></a>
-    	<a class="navbar-brand" href="http://localhost/roomBooking/index.php" id="HS">G Creation</a>
+    	<a href="http://localhost/roomBooking/index.php/admin/adminpage" class="navbar-brand"><img src="http://localhost/roomBooking/img/logo.png" width="115px" /></a>
+    	<a class="navbar-brand" href="#" id="HS">G Creation</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-     	<li><a href="http://localhost/roomBooking/index.php" id="HS">Home</a></li>
-     	<li><a href="http://localhost/roomBooking/index.php/aboutUs" id="HS">About Us</a></li>
-      	<li><a href="http://localhost/roomBooking/bookingSystem/Booking/reserve.php" id="HS">Booking</a></li>
-     	<li><a href="http://localhost/roomBooking/index.php/ContactUs" id="HS">Contact Us</a></li>
+     	<li><a href="http://localhost/roomBooking/index.php/admin/adminpage" id="HS">Mission</a></li>
+     	<li><a href="http://localhost/roomBooking/bookingSystem/Booking/reserve.php" id="HS">Booking</a></li>
+      	<li><a href="http://localhost/roomBooking/bookingSystem/Booking/reservationAll.php" id="HS">Reservation</a></li>
+      	<li><a href="http://localhost/roomBooking/index.php/admin/userComment" id="HS">User Comment</a></li>
       </ul>
       <?php
-		//if variable equal to a then diaplay the header that user havent login
-      		if ($phpEmail!="a"){
+      		if ($phpEmail!="a"){// if the admin already sign in (display logout and edit button)
 		      echo '<ul class="nav navbar-nav navbar-right">
 		        <li>
 					<div class="dropdown">
-						<button onclick="myFunction()" class="dropbtn">'. $phpName.'</button>
+						<button onclick="myFunction()" class="dropbtn" >'. $phpName.'</button>
 						  <div id="myDropdown" class="dropdown-content">
-						    <a href="http://localhost/roomBooking/index.php/editProfile">My Profile</a>
-						    <a href="http://localhost/roomBooking/bookingSystem/Booking/historyview.php">Reservation</a>
+						    <a href="http://localhost/roomBooking/index.php/admin/editProfile">My Profile</a>
 						    <a href="http://localhost/roomBooking/bookingSystem/logout.php">LogOut</a>
 						  </div>
 					</div>
@@ -89,8 +84,7 @@
 		        </li>
 		      </ul>';
 		      }
-			  //else show the header that user already login
-			else{
+			else{//if the email is empty(the user not yet sign in) display this header (call them sign in)
 		      echo '<ul class="nav navbar-nav navbar-right">
 		        <li>
 				        <a href="#popup1" id="HS"><span class="glyphicon glyphicon-log-in"></span> Login</a>
