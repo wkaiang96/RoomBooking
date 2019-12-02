@@ -89,7 +89,7 @@
 		  <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-				<a href="delete.php"><input type="submit" class="btn btn-danger" onclick="return confirm("Are You sure?")" value="Delete Account"/></a>
+				<a href="http://localhost/roomBooking/bookingSystem/delete.php"><input type="submit" class="btn btn-danger" onclick="return confirm("Are You sure?")" value="Delete Account"/></a>
             </div>
           </div>
         </form>';
