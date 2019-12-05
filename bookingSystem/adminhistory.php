@@ -12,15 +12,14 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
-$phpEmail=$_REQUEST['email'];
 $phpID=isset($_REQUEST['id']) ? $_REQUEST['id'] : null;
 if (!empty($phpID))
 {
-	$sql="SELECT * FROM room WHERE email='$phpEmail' AND ID='$phpID' ";
+	$sql="SELECT * FROM room WHERE ID='$phpID' ";
 }
 else
 {
-	$sql="SELECT * FROM room WHERE email='$phpEmail'";
+	$sql="SELECT * FROM room";
 }
 
 //select all the data according to the session
@@ -37,6 +36,6 @@ if($result->num_rows>0) {
 	while ($row = $result->fetch_assoc()) {
 		array_push($res, $row);
 	}
-	echo '{"RowCount":' . $result->num_rows . ',"history":' . json_encode($res) . '}';
+	echo '{"RowCount":' . $result->num_rows . ',"allHistory":' . json_encode($res) . '}';
 }
 ?>

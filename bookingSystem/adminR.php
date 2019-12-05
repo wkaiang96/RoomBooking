@@ -13,6 +13,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+$email=$_POST['userEmail'];
 $slot=$_POST['slot'];
 $roomT=$_POST['roomT'];
 $date = $_POST["bookdate"];
@@ -30,16 +31,16 @@ if ($result->num_rows > 0)
 
 else
 	{
-		$sql="INSERT INTO room (`slot`,`email`,`roomT`,`date`,`book_by`) VALUES ('$slot','$phpEmail','$roomT','$date','User')";
+		$sql="INSERT INTO room (`slot`,`email`,`roomT`,`date`,`book_by`) VALUES ('$slot','$email','$roomT','$date','Admin')";
 		if ($conn->query($sql)==TRUE)
 			{
 				die( '<script>alert("Booking Successful")
-				location.href="http://localhost/roomBooking/index.php";</script>');
+				location.href="http://localhost/roomBooking/index.php/admin/adminpage";</script>');
 			}
 		else
 			{ 
 				die ('<script>alert("Booking Failed")
-				location.href="http://localhost/roomBooking/index.php/reserve";</script>');
+				location.href="http://localhost/roomBooking/index.php/admin/adminBook";</script>');
 			}
 	}
 	

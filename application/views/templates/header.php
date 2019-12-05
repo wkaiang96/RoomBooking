@@ -48,7 +48,7 @@
       <ul class="nav navbar-nav">
      	<li><a href="http://localhost/roomBooking/index.php" id="HS">Home</a></li>
      	<li><a href="http://localhost/roomBooking/index.php/aboutUs" id="HS">About Us</a></li>
-      	<li><a href="http://localhost/roomBooking/bookingSystem/Booking/reserve.php" id="HS">Booking</a></li>
+      	<li><a href="http://localhost/roomBooking/index.php/reserve" id="HS">Booking</a></li>
      	<li><a href="http://localhost/roomBooking/index.php/ContactUs" id="HS">Contact Us</a></li>
       </ul>
       <?php
@@ -60,7 +60,7 @@
 						<button onclick="myFunction()" class="dropbtn">'. $phpName.'</button>
 						  <div id="myDropdown" class="dropdown-content">
 						    <a href="http://localhost/roomBooking/index.php/editProfile">My Profile</a>
-						    <a href="http://localhost/roomBooking/bookingSystem/Booking/historyview.php">Reservation</a>
+						    <a href="http://localhost/roomBooking/index.php/history">Reservation</a>
 						    <a href="http://localhost/roomBooking/bookingSystem/logout.php">LogOut</a>
 						  </div>
 					</div>

@@ -39,13 +39,13 @@
   <div class="container-fluid col-lg-12">
     <div class="navbar-header">
     	<a href="http://localhost/roomBooking/index.php/admin/adminpage" class="navbar-brand"><img src="http://localhost/roomBooking/img/logo.png" width="115px" /></a>
-    	<a class="navbar-brand" href="#" id="HS">G Creation</a>
+    	<a class="navbar-brand" href="http://localhost/roomBooking/index.php/admin/adminpage" id="HS">G Creation</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
      	<li><a href="http://localhost/roomBooking/index.php/admin/adminpage" id="HS">Mission</a></li>
-     	<li><a href="http://localhost/roomBooking/bookingSystem/Booking/reserve.php" id="HS">Booking</a></li>
-      	<li><a href="http://localhost/roomBooking/bookingSystem/Booking/reservationAll.php" id="HS">Reservation</a></li>
+     	<li><a href="http://localhost/roomBooking/index.php/admin/adminBook" id="HS">Booking</a></li>
+      	<li><a href="http://localhost/roomBooking/index.php/admin/allReservation" id="HS">Reservation</a></li>
       	<li><a href="http://localhost/roomBooking/index.php/admin/userComment" id="HS">User Comment</a></li>
       </ul>
       <?php

@@ -50,6 +50,7 @@
 							<option name="subject" value="event">Event</option>
 					  </select>
 				</td>
+
 				<td >
 					<span style=""><input name="Submit1" type="submit" value="Submit" style="font-size:15px;border-radius:30px;margin-left:10%"/></span>
 				</td>
@@ -59,22 +60,21 @@
   </div>  
 	<br/>
 	<br/>
-  <h1>User Comment List:&nbsp;<?php echo $phpSubject ?></h1>
-          
+	<h1>User Comment List:&nbsp;<?php echo $phpSubject ?></h1>
 	<?php
 	//display data by using while loop and display table by table
 			$no 	= 1;
 			$total 	= 0;
 			if($pageContents!="")
 			{
-				echo '  <table class="table table-condensed" width="100%">			
+				echo '  <table class="table table-hover" width="100%" id="record">			
 				<thead>
 							  <tr style="font-size:100%">
-								  <th width="2%">No</th>
-								  <th width="15%">User Name</th>
-								  <th width="20%">User Email</th>
-								  <th width="10%">Subject</th>
-								  <th width="45%">Comment</th>
+								  <td width="2%">No</td>
+								  <td width="15%">User Name</td>
+								  <td width="20%">User Email</td>
+								  <td width="10%">Subject</td>
+								  <td width="45%">Comment</td>
 							  </tr>
 				  </thead>
 				  <tbody>';
@@ -85,19 +85,17 @@
 							<td>'.$row['username'].'</td>
 							<td>'.$row['useremail'].'</td>
 							<td>'.$row['subject'].'</td>
-							<td>'.$row['message'].'</td>
-					
+							<td>'.$row['message'].'</td>				
 							</tr>';
 					$no++;
 				}
-				echo '			</tbody>
+				echo '</tbody>
 				</table>';
 			}
 			else{
 				echo '<h3 style="color:red">No result Found</h3>';
 			}
 		?>
-
 	</div>
 	<div class="noprint" align="center" style="margin:5% ">
 	<br/>
