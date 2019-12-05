@@ -8,46 +8,34 @@
 <body>
 
 <?php
+//session start
+//create connection
 
-session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "gcreation";
-// Create connection
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-$phpEmail=$_SESSION['email'];
 if (!empty($_POST['ID']))
 {
-    $phpID=$_POST['ID'];
-    $sql="SELECT * FROM room WHERE email='$phpEmail' AND ID='$phpID' ";
+	//get subject from previous page
+	$phpID=$_POST['ID'];
+	$pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/allReservation.php?id=".$phpID."");
 }
+//if empty
 else
-{	$phpID="";
-    $sql="SELECT * FROM room WHERE email='$phpEmail'";
+{
+	$phpID="";
+	$pageContents = file_get_contents("http://localhost/roomBooking/bookingSystem/adminhistory.php");
 }
 
-//select all the data according to the session
-$result=$conn->query($sql);
-$query = mysqli_query($conn, $sql);
-
-if (!$query) {
-    die ('SQL Error: ' . mysqli_error($conn));
+if($pageContents!="")
+{
+	$result=json_decode($pageContents,true);
 }
 
-$row=mysqli_fetch_assoc($result);	
 ?>
 
 
 
 <div class="container">
 <div class="col-sm-10">  
-  <form method="post" action="history.php">
+  <form method="post" action="http://localhost/roomBooking/index.php/admin/allReservation">
     <table >
         <tr >
             <td >
@@ -65,8 +53,9 @@ $row=mysqli_fetch_assoc($result);
 </div>  
 <br/>
 <br/>
+	<br/>
 <h1>Booking List</h1>  
-<table class="table table-condensed" width="100%">			
+<table class="table table-hover" width="100%">
 <thead>
             <tr style="font-size:100%">
                 <th style='text-align: center'>ID</th>
@@ -74,14 +63,18 @@ $row=mysqli_fetch_assoc($result);
                 <th style='text-align: center'>Slot</th>
                 <th style='text-align: center'>Email</th>
                 <th style='text-align: center'>Room</th>
+                <th style='text-align: center'>Booked By</th>
             </tr>
 </thead>
 
 
-<?php
-        $no = 1;
-        while ($row = mysqli_fetch_array($query)) 
-        {
+	<?php
+	//display data by using while loop and display table by table
+	$no 	= 1;
+	$total 	= 0;
+	if($pageContents!="")
+		foreach ($result['allHistory'] as $row)
+		{
             echo "<form method='post'>";
             echo "<tbody>";
             echo "<tr>";
@@ -90,6 +83,7 @@ $row=mysqli_fetch_assoc($result);
             echo "<td style='text-align: center'>" . "$row[slot]" . " </td>";
             echo "<td style='text-align: center'>" . "$row[email]" . " </td>";
             echo "<td style='text-align: center'>" . "$row[roomT]" . " </td>";
+            echo "<td style='text-align: center'>" . "$row[book_by]" . " </td>";
             echo "<td style='text-align: center'>".
                  "<button type= 'button' onClick= deleteRow($row[ID]) class='btn btn-danger btn-primary btn-sm' name='ID' style='font-size:14px'> <span class='glyphicon glyphicon-trash'></span> Delete</button></td>";
             echo "<input type='hidden' name='ID' value='" . $row["ID"] . "' >";												
@@ -100,7 +94,10 @@ $row=mysqli_fetch_assoc($result);
             // $sql = "UPDATE FROM room WHERE ID='$row[ID]'";
             // mysqli_query($conn, $sql);
             $no++;
-        }?>
+        }
+	else
+		echo "<h2 style='color: rgba(133,17,17,0.96)'>Sorry No Record Found!</h2>";
+	?>
 
 <script language ='javascript'>
 
@@ -108,7 +105,7 @@ function deleteRow(ID)
 {
     if(confirm("Confirmation in deleting this booking?"))
     {
-        window.location.href='delete.php?deleted_id='+ID+'';
+        window.location.href='http://localhost/roomBooking/bookingSystem/adminDeleteReserve.php?deleted_id='+ID+'';
         return true;
     }
 }
@@ -116,7 +113,8 @@ function deleteRow(ID)
 </script>
 </table>
 </div>
-
+<div style="margin-bottom: 18%">
+</div>
 </body>
 
 </html>

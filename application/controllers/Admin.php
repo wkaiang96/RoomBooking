@@ -18,8 +18,9 @@ class Admin extends CI_Controller
 			$this->load->view('admin/'.$page, $data);
 			$this->load->view('templates/footer', $data);
 		}
-
-		$this->load->view('admin/'.$page, $data);
+		else{
+			$this->load->view('admin/'.$page, $data);
+		}
 
 	}
 }
