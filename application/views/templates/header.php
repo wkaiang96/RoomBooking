@@ -36,7 +36,6 @@
 	}
 	?>
 
-
 <div class="col-lg-12">
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid col-lg-12">

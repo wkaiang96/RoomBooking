@@ -63,6 +63,7 @@ if($pageContents!="")
                 <th style='text-align: center'>Slot</th>
                 <th style='text-align: center'>Email</th>
                 <th style='text-align: center'>Room</th>
+                <th style='text-align: center'>Booked By</th>
             </tr>
 </thead>
 
@@ -82,6 +83,7 @@ if($pageContents!="")
             echo "<td style='text-align: center'>" . "$row[slot]" . " </td>";
             echo "<td style='text-align: center'>" . "$row[email]" . " </td>";
             echo "<td style='text-align: center'>" . "$row[roomT]" . " </td>";
+            echo "<td style='text-align: center'>" . "$row[book_by]" . " </td>";
             echo "<td style='text-align: center'>".
                  "<button type= 'button' onClick= deleteRow($row[ID]) class='btn btn-danger btn-primary btn-sm' name='ID' style='font-size:14px'> <span class='glyphicon glyphicon-trash'></span> Delete</button></td>";
             echo "<input type='hidden' name='ID' value='" . $row["ID"] . "' >";												
